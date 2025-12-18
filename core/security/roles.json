@@ -1,0 +1,4 @@
+{ "guest":["read"],"user":["read","chat","save","play"],
+  "creator":["read","chat","save","spawn","edit"],
+  "moderator":["read","chat","save","moderate","ban","rooms"],
+  "overlord":["*"] }
