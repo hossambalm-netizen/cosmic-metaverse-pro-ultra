@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head><meta charset="UTF-8"><title>تسجيل الدخول</title></head>
+<body>
+<h2>🔐 دخول Cosmic</h2>
+<input id="email" placeholder="البريد">
+<input id="password" type="password" placeholder="كلمة المرور">
+<button onclick="login()">دخول</button>
+<button onclick="google()">Google</button>
+<a href="reset.html">نسيت كلمة المرور؟</a>
+
+<script type="module">
+import { auth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "../js/auth/firebase.js";
+import { saveUser } from "../js/auth/session.js";
+
+window.login = async ()=>{
+ const email=email.value, pass=password.value;
+ const res=await signInWithEmailAndPassword(auth,email,pass);
+ saveUser({uid:res.user.uid,email,role:"user"});
+ location.href="/pages/index.html";
+}
+window.google = async ()=>{
+ const provider=new GoogleAuthProvider();
+ const res=await signInWithPopup(auth,provider);
+ saveUser({uid:res.user.uid,email:res.user.email,role:"user"});
+ location.href="/pages/index.html";
+}
+</script>
+</body>
+</html>

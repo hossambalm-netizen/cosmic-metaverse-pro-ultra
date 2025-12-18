@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head><meta charset="UTF-8"><title>لوحة المستخدم</title></head>
+<body>
+<h2>👤 حسابي</h2>
+<div id="info"></div>
+
+<script type="module">
+import "../js/auth/guard.js";
+import { getUser } from "../js/auth/session.js";
+const u=getUser();
+info.innerHTML=`📧 ${u.email} | 🆔 ${u.uid}`;
+</script>
+</body>
+</html>

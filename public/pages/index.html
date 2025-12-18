@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head><meta charset="UTF-8"><title>Cosmic Index</title></head>
+<body>
+<h1>🧭 مركز التحكم الكوني</h1>
+
+<ul>
+ <li><a href="user.html">👤 لوحة المستخدم</a></li>
+ <li><a href="/world/index.html">🌍 العالم</a></li>
+ <li><a href="/pages/rooms.html">🏠 الغرف</a></li>
+ <li><a href="/pages/labs.html">🔬 المختبرات</a></li>
+</ul>
+
+<button onclick="logout()">🚪 خروج</button>
+
+<script type="module">
+import "../js/auth/guard.js";
+import { logout } from "../js/auth/session.js";
+window.logout=logout;
+</script>
+</body>
+</html>
